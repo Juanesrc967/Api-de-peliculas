@@ -78,7 +78,7 @@ const mostrarPeliculas = (peliculas, query = '') => {
 
 const mostrarDetalles = async (id) => {
     try {
-        const Respuesta = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=fbf35eff2d4e6b983489b8b08fbe6063&language=es-MX`);
+        const Respuesta = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e243446be1755ba89275758cc7631b10&language=es-MX`);
 
         if (Respuesta.status === 200) {
             const pelicula = await Respuesta.json();
