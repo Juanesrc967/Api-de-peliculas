@@ -4,10 +4,18 @@
 	box-sizing: border-box;
 }
 
+:root {
+    --Negro: #000000;
+    --AzulCielo: #f7770f;
+    --Blanco: #fff;
+    --Negro: #131517;
+    --Negrilla2: #252A2E;
+}
+
 body {
 	font-family: 'Montserrat', sans-serif;
 	background: #e0e0e0;
-	color: #000000;
+	color: var(--Negro);
 }
 
 .contenedor {
@@ -126,10 +134,9 @@ body {
 	
   }
   
-  
   .close:hover,
   .close:focus {
-	color: black;
+	color: var(--Negro);
 	text-decoration: none;
 	cursor: pointer;
   }
