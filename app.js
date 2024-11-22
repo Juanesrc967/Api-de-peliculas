@@ -83,12 +83,17 @@ const mostrarDetalles = async (id) => {
         if (Respuesta.status === 200) {
             const pelicula = await Respuesta.json();
 
+            // Rellenar los datos del modal
             document.getElementById('tituloModal').textContent = pelicula.title;
             document.getElementById('posterModal').src = `https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`;
-            document.getElementById('descripcionModal').textContent = pelicula.overview;
-            document.getElementById('generosModal').textContent = pelicula.genres.map(genero => genero.name).join(', ');
-            document.getElementById('puntuacionModal').textContent = pelicula.vote_average;
-            
+            document.getElementById('descripcionModal').textContent = pelicula.overview || 'Descripción no disponible.';
+            document.getElementById('generosModal').textContent = pelicula.genres.map(genero => genero.name).join(', ') || 'Géneros no disponibles.';
+            document.getElementById('puntuacionModal').textContent = pelicula.vote_average || 'Sin puntuación.';
+
+            // Ajustar el tamaño del modal al contenido
+            const modalContent = document.querySelector('.modal-content');
+            modalContent.style.width = 'auto'; // Ajusta el ancho según el contenido
+            modalContent.style.height = 'auto'; // Ajusta la altura según el contenido
 
             // Mostrar el modal
             document.getElementById('modal').style.display = "block";
@@ -98,7 +103,8 @@ const mostrarDetalles = async (id) => {
     } catch (error) {
         console.log('Error al obtener detalles de la película:', error);
     }
-}
+};
+
 
 const manejarErrores = (status) => {
     if (status === 401) {
