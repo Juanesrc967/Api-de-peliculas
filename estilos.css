@@ -1,156 +1,161 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
     --Negro: #000000;
-    --AzulCielo: #f7770f;
-    --Blanco: #fff;
-    --Negro: #131517;
-    --Negrilla2: #252A2E;
+    --Colorfondo: #f5f5f5;
+    --Piedepagina: #100a1f;
+    --BotonesPiedepagina: #241744;
+    --Blanco: #ffffff;
+    --hoverBoton: #137c32;
+    --Gris: #aaa;
+    --Naranja: #ff8c00; /* Toque de color naranja */
+    --hoverNaranja: #e57800; /* Variante para hover */
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
-	background: #e0e0e0;
-	color: var(--Negro);
+    font-family: 'Montserrat', sans-serif;
+    background: var(--Colorfondo);
+    color: var(--Negro);
+    line-height: 1.6; /* Mejor legibilidad */
 }
 
 .contenedor {
-	width: 90%;
-	max-width: 1000px;
-	margin: 40px auto 100px auto;
-
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto 100px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptable a cualquier pantalla */
+    gap: 20px;
 }
 
 .contenedor .pelicula {
-	text-align: center;
+    text-align: center;
 }
 
 .contenedor .pelicula .titulo {
-	font-size: 16px;
-	font-weight: 600;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
 }
 
 .contenedor .pelicula .poster {
-	width: 100%;
-	margin-bottom: 10px;
-	border-radius: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Toque de sombra para destacar */
 }
 
 .paginacion {
-	position: fixed;
-	bottom: 0;
-	background: #100a1f;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	padding: 10px;
+    position: fixed;
+    bottom: 0;
+    background: var(--Piedepagina);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    border-top: 4px solid var(--Naranja); /* Toque de color naranja */
 }
 
 .paginacion button {
-	cursor: pointer;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	height: 50px;
-	width: 200px;
-	background: #241744;
-	color: #fff;
-	border-radius: 100px;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	transition: .3s ease all;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 200px;
+    background: var(--BotonesPiedepagina);
+    color: var(--Blanco);
+    border-radius: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background 0.3s ease;
 }
 
 .paginacion button:hover {
-	background: #137c32;
+    background: var(--hoverNaranja); /* Cambio al color naranja */
 }
 
 .buscador {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     margin: 20px 0;
 }
 
 .buscador input {
     width: 100%;
-    max-width: 500px; 
-    padding: 10px;
-    border: 2px solid #241744;
+    max-width: 500px;
+    padding: 12px;
+    border: 2px solid var(--BotonesPiedepagina);
     border-radius: 50px;
     font-size: 16px;
     outline: none;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .buscador input:focus {
-    border-color: #137c32;
+    border-color: var(--Naranja);
+    box-shadow: 0 0 5px var(--Naranja);
 }
 
-
 .modal {
-	display: none; 
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5); 
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    margin: auto; 
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--Blanco);
+    margin: auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 90%;
-    max-width: 500px; 
+    max-width: 500px;
     text-align: center;
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 #posterModal {
-    width: 50%; 
+    width: 50%;
     border-radius: 10px;
     margin-bottom: 20px;
 }
-  
-  .close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-	
-  }
-  
-  .close:hover,
-  .close:focus {
-	color: var(--Negro);
-	text-decoration: none;
-	cursor: pointer;
-  }
-  
-  #tituloModal {
-    font-size: 24px; 
-    font-weight: bold; 
+
+.close {
+    color: var(--Gris);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--Negro);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#tituloModal {
+    font-size: 24px;
+    font-weight: bold;
     margin-bottom: 15px;
 }
 
 .modal-content p {
-    font-size: 16px; 
-    color: #333;
-	margin: 20px;
+    font-size: 16px;
+    color: var(--Negro);
+    margin: 20px;
 }
 
 .modal-content strong {
