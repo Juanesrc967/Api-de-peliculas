@@ -12,15 +12,15 @@
     --Blanco: #ffffff;
     --hoverBoton: #137c32;
     --Gris: #aaa;
-    --Naranja: #ff8c00; /* Toque de color naranja */
-    --hoverNaranja: #e57800; /* Variante para hover */
+    --Naranja: #ff8c00; 
+    --hoverNaranja: #e57800; 
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     background: var(--Colorfondo);
     color: var(--Negro);
-    line-height: 1.6; /* Mejor legibilidad */
+    line-height: 1.6; 
 }
 
 .contenedor {
@@ -28,7 +28,7 @@ body {
     max-width: 1200px;
     margin: 40px auto 100px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptable a cualquier pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
     gap: 20px;
 }
 
@@ -46,7 +46,7 @@ body {
     width: 100%;
     margin-bottom: 10px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Toque de sombra para destacar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .paginacion {
@@ -58,7 +58,7 @@ body {
     justify-content: center;
     gap: 20px;
     padding: 15px;
-    border-top: 4px solid var(--Naranja); /* Toque de color naranja */
+    border-top: 4px solid var(--Naranja); 
 }
 
 .paginacion button {
@@ -78,7 +78,7 @@ body {
 }
 
 .paginacion button:hover {
-    background: var(--hoverNaranja); /* Cambio al color naranja */
+    background: var(--hoverNaranja); 
 }
 
 .buscador {
